@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85EF992121A033760009EA9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF992021A033760009EA9A /* AppDelegate.swift */; };
+		85EF992321A033770009EA9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF992221A033770009EA9A /* ViewController.swift */; };
+		85EF992621A033770009EA9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85EF992421A033770009EA9A /* Main.storyboard */; };
+		85EF992821A0337B0009EA9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EF992721A0337B0009EA9A /* Assets.xcassets */; };
+		85EF992B21A0337B0009EA9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85EF992921A0337B0009EA9A /* LaunchScreen.storyboard */; };
+		85EF993621A0337B0009EA9A /* ReizoukoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF993521A0337B0009EA9A /* ReizoukoTests.swift */; };
+		85EF994121A0337B0009EA9A /* ReizoukoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF994021A0337B0009EA9A /* ReizoukoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85EF993221A0337B0009EA9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85EF991521A033760009EA9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85EF991C21A033760009EA9A;
+			remoteInfo = Reizouko;
+		};
+		85EF993D21A0337B0009EA9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85EF991521A033760009EA9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85EF991C21A033760009EA9A;
+			remoteInfo = Reizouko;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85EF991D21A033760009EA9A /* Reizouko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reizouko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85EF992021A033760009EA9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85EF992221A033770009EA9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85EF992521A033770009EA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85EF992721A0337B0009EA9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85EF992A21A0337B0009EA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85EF992C21A0337B0009EA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85EF993121A0337B0009EA9A /* ReizoukoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReizoukoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85EF993521A0337B0009EA9A /* ReizoukoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReizoukoTests.swift; sourceTree = "<group>"; };
+		85EF993721A0337B0009EA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85EF993C21A0337B0009EA9A /* ReizoukoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReizoukoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85EF994021A0337B0009EA9A /* ReizoukoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReizoukoUITests.swift; sourceTree = "<group>"; };
+		85EF994221A0337B0009EA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85EF991A21A033760009EA9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EF992E21A0337B0009EA9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EF993921A0337B0009EA9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85EF991421A033760009EA9A = {
+			isa = PBXGroup;
+			children = (
+				85EF991F21A033760009EA9A /* Reizouko */,
+				85EF993421A0337B0009EA9A /* ReizoukoTests */,
+				85EF993F21A0337B0009EA9A /* ReizoukoUITests */,
+				85EF991E21A033760009EA9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85EF991E21A033760009EA9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85EF991D21A033760009EA9A /* Reizouko.app */,
+				85EF993121A0337B0009EA9A /* ReizoukoTests.xctest */,
+				85EF993C21A0337B0009EA9A /* ReizoukoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85EF991F21A033760009EA9A /* Reizouko */ = {
+			isa = PBXGroup;
+			children = (
+				85EF992021A033760009EA9A /* AppDelegate.swift */,
+				85EF992221A033770009EA9A /* ViewController.swift */,
+				85EF992421A033770009EA9A /* Main.storyboard */,
+				85EF992721A0337B0009EA9A /* Assets.xcassets */,
+				85EF992921A0337B0009EA9A /* LaunchScreen.storyboard */,
+				85EF992C21A0337B0009EA9A /* Info.plist */,
+			);
+			path = Reizouko;
+			sourceTree = "<group>";
+		};
+		85EF993421A0337B0009EA9A /* ReizoukoTests */ = {
+			isa = PBXGroup;
+			children = (
+				85EF993521A0337B0009EA9A /* ReizoukoTests.swift */,
+				85EF993721A0337B0009EA9A /* Info.plist */,
+			);
+			path = ReizoukoTests;
+			sourceTree = "<group>";
+		};
+		85EF993F21A0337B0009EA9A /* ReizoukoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				85EF994021A0337B0009EA9A /* ReizoukoUITests.swift */,
+				85EF994221A0337B0009EA9A /* Info.plist */,
+			);
+			path = ReizoukoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85EF991C21A033760009EA9A /* Reizouko */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85EF994521A0337B0009EA9A /* Build configuration list for PBXNativeTarget "Reizouko" */;
+			buildPhases = (
+				85EF991921A033760009EA9A /* Sources */,
+				85EF991A21A033760009EA9A /* Frameworks */,
+				85EF991B21A033760009EA9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Reizouko;
+			productName = Reizouko;
+			productReference = 85EF991D21A033760009EA9A /* Reizouko.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85EF993021A0337B0009EA9A /* ReizoukoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85EF994821A0337B0009EA9A /* Build configuration list for PBXNativeTarget "ReizoukoTests" */;
+			buildPhases = (
+				85EF992D21A0337B0009EA9A /* Sources */,
+				85EF992E21A0337B0009EA9A /* Frameworks */,
+				85EF992F21A0337B0009EA9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85EF993321A0337B0009EA9A /* PBXTargetDependency */,
+			);
+			name = ReizoukoTests;
+			productName = ReizoukoTests;
+			productReference = 85EF993121A0337B0009EA9A /* ReizoukoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		85EF993B21A0337B0009EA9A /* ReizoukoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85EF994B21A0337B0009EA9A /* Build configuration list for PBXNativeTarget "ReizoukoUITests" */;
+			buildPhases = (
+				85EF993821A0337B0009EA9A /* Sources */,
+				85EF993921A0337B0009EA9A /* Frameworks */,
+				85EF993A21A0337B0009EA9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85EF993E21A0337B0009EA9A /* PBXTargetDependency */,
+			);
+			name = ReizoukoUITests;
+			productName = ReizoukoUITests;
+			productReference = 85EF993C21A0337B0009EA9A /* ReizoukoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85EF991521A033760009EA9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Kudo Ayana";
+				TargetAttributes = {
+					85EF991C21A033760009EA9A = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					85EF993021A0337B0009EA9A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 85EF991C21A033760009EA9A;
+					};
+					85EF993B21A0337B0009EA9A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 85EF991C21A033760009EA9A;
+					};
+				};
+			};
+			buildConfigurationList = 85EF991821A033760009EA9A /* Build configuration list for PBXProject "Reizouko" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85EF991421A033760009EA9A;
+			productRefGroup = 85EF991E21A033760009EA9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85EF991C21A033760009EA9A /* Reizouko */,
+				85EF993021A0337B0009EA9A /* ReizoukoTests */,
+				85EF993B21A0337B0009EA9A /* ReizoukoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85EF991B21A033760009EA9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85EF992B21A0337B0009EA9A /* LaunchScreen.storyboard in Resources */,
+				85EF992821A0337B0009EA9A /* Assets.xcassets in Resources */,
+				85EF992621A033770009EA9A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EF992F21A0337B0009EA9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EF993A21A0337B0009EA9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85EF991921A033760009EA9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85EF992321A033770009EA9A /* ViewController.swift in Sources */,
+				85EF992121A033760009EA9A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EF992D21A0337B0009EA9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85EF993621A0337B0009EA9A /* ReizoukoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EF993821A0337B0009EA9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85EF994121A0337B0009EA9A /* ReizoukoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85EF993321A0337B0009EA9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85EF991C21A033760009EA9A /* Reizouko */;
+			targetProxy = 85EF993221A0337B0009EA9A /* PBXContainerItemProxy */;
+		};
+		85EF993E21A0337B0009EA9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85EF991C21A033760009EA9A /* Reizouko */;
+			targetProxy = 85EF993D21A0337B0009EA9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85EF992421A033770009EA9A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85EF992521A033770009EA9A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		85EF992921A0337B0009EA9A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85EF992A21A0337B0009EA9A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85EF994321A0337B0009EA9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85EF994421A0337B0009EA9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85EF994621A0337B0009EA9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				INFOPLIST_FILE = Reizouko/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.Reizouko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85EF994721A0337B0009EA9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				INFOPLIST_FILE = Reizouko/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.Reizouko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		85EF994921A0337B0009EA9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				INFOPLIST_FILE = ReizoukoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.ReizoukoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reizouko.app/Reizouko";
+			};
+			name = Debug;
+		};
+		85EF994A21A0337B0009EA9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				INFOPLIST_FILE = ReizoukoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.ReizoukoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reizouko.app/Reizouko";
+			};
+			name = Release;
+		};
+		85EF994C21A0337B0009EA9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				INFOPLIST_FILE = ReizoukoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.ReizoukoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Reizouko;
+			};
+			name = Debug;
+		};
+		85EF994D21A0337B0009EA9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				INFOPLIST_FILE = ReizoukoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.ReizoukoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Reizouko;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85EF991821A033760009EA9A /* Build configuration list for PBXProject "Reizouko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85EF994321A0337B0009EA9A /* Debug */,
+				85EF994421A0337B0009EA9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85EF994521A0337B0009EA9A /* Build configuration list for PBXNativeTarget "Reizouko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85EF994621A0337B0009EA9A /* Debug */,
+				85EF994721A0337B0009EA9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85EF994821A0337B0009EA9A /* Build configuration list for PBXNativeTarget "ReizoukoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85EF994921A0337B0009EA9A /* Debug */,
+				85EF994A21A0337B0009EA9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85EF994B21A0337B0009EA9A /* Build configuration list for PBXNativeTarget "ReizoukoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85EF994C21A0337B0009EA9A /* Debug */,
+				85EF994D21A0337B0009EA9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85EF991521A033760009EA9A /* Project object */;
+}

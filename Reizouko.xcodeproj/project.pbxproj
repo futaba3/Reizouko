@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0059B1CEBC51235B36829953 /* Pods_ReizoukoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4BE9FA0345FE6D91BA5E76 /* Pods_ReizoukoTests.framework */; };
+		20FEAA1BAB051561A982BA6A /* Pods_Reizouko_ReizoukoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B919BD80541E24DC9F00C /* Pods_Reizouko_ReizoukoUITests.framework */; };
+		41763A62E070627BBFCB98B9 /* Pods_Reizouko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCAD759AA42C3E7F80D9C04 /* Pods_Reizouko.framework */; };
+		858CB6D42237688F005B67B4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CB6D32237688F005B67B4 /* SettingsViewController.swift */; };
+		85D5397D21F0B67600985262 /* MyUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5397C21F0B67600985262 /* MyUINavigationController.swift */; };
 		85EF992121A033760009EA9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF992021A033760009EA9A /* AppDelegate.swift */; };
 		85EF992321A033770009EA9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF992221A033770009EA9A /* ViewController.swift */; };
 		85EF992621A033770009EA9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85EF992421A033770009EA9A /* Main.storyboard */; };
 		85EF992821A0337B0009EA9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85EF992721A0337B0009EA9A /* Assets.xcassets */; };
 		85EF992B21A0337B0009EA9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85EF992921A0337B0009EA9A /* LaunchScreen.storyboard */; };
-		85EF993621A0337B0009EA9A /* ReizoukoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF993521A0337B0009EA9A /* ReizoukoTests.swift */; };
-		85EF994121A0337B0009EA9A /* ReizoukoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF994021A0337B0009EA9A /* ReizoukoUITests.swift */; };
+		85EF994F21A18AE70009EA9A /* ShousaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF994E21A18AE70009EA9A /* ShousaiViewController.swift */; };
+		85EF995121B2708F0009EA9A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF995021B2708F0009EA9A /* CustomCell.swift */; };
+		85EF995521B282220009EA9A /* AddfoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF995421B282220009EA9A /* AddfoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E2C14098DCE8581C729DB55 /* Pods-ReizoukoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReizoukoTests.release.xcconfig"; path = "Target Support Files/Pods-ReizoukoTests/Pods-ReizoukoTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E4BE9FA0345FE6D91BA5E76 /* Pods_ReizoukoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReizoukoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CCA0936457559991AB979C8 /* Pods-Reizouko-ReizoukoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reizouko-ReizoukoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Reizouko-ReizoukoUITests/Pods-Reizouko-ReizoukoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		858CB6D32237688F005B67B4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		85D5397C21F0B67600985262 /* MyUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUINavigationController.swift; sourceTree = "<group>"; };
 		85EF991D21A033760009EA9A /* Reizouko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reizouko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EF992021A033760009EA9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85EF992221A033770009EA9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,11 +53,16 @@
 		85EF992A21A0337B0009EA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85EF992C21A0337B0009EA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85EF993121A0337B0009EA9A /* ReizoukoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReizoukoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85EF993521A0337B0009EA9A /* ReizoukoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReizoukoTests.swift; sourceTree = "<group>"; };
-		85EF993721A0337B0009EA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85EF993C21A0337B0009EA9A /* ReizoukoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReizoukoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85EF994021A0337B0009EA9A /* ReizoukoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReizoukoUITests.swift; sourceTree = "<group>"; };
-		85EF994221A0337B0009EA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85EF994E21A18AE70009EA9A /* ShousaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShousaiViewController.swift; sourceTree = "<group>"; };
+		85EF995021B2708F0009EA9A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		85EF995421B282220009EA9A /* AddfoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddfoodViewController.swift; sourceTree = "<group>"; };
+		86D1355E19396F4A1D021480 /* Pods-Reizouko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reizouko.debug.xcconfig"; path = "Target Support Files/Pods-Reizouko/Pods-Reizouko.debug.xcconfig"; sourceTree = "<group>"; };
+		B332FB01427745DDED59751A /* Pods-ReizoukoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReizoukoTests.debug.xcconfig"; path = "Target Support Files/Pods-ReizoukoTests/Pods-ReizoukoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C50991D925A301A3B02D6616 /* Pods-Reizouko-ReizoukoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reizouko-ReizoukoUITests.release.xcconfig"; path = "Target Support Files/Pods-Reizouko-ReizoukoUITests/Pods-Reizouko-ReizoukoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D8441F8EC96941BD4D99CFA6 /* Pods-Reizouko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reizouko.release.xcconfig"; path = "Target Support Files/Pods-Reizouko/Pods-Reizouko.release.xcconfig"; sourceTree = "<group>"; };
+		EF3B919BD80541E24DC9F00C /* Pods_Reizouko_ReizoukoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reizouko_ReizoukoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFCAD759AA42C3E7F80D9C04 /* Pods_Reizouko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reizouko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41763A62E070627BBFCB98B9 /* Pods_Reizouko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0059B1CEBC51235B36829953 /* Pods_ReizoukoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +86,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20FEAA1BAB051561A982BA6A /* Pods_Reizouko_ReizoukoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30F456720D55A024D5D3E4EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFCAD759AA42C3E7F80D9C04 /* Pods_Reizouko.framework */,
+				EF3B919BD80541E24DC9F00C /* Pods_Reizouko_ReizoukoUITests.framework */,
+				5E4BE9FA0345FE6D91BA5E76 /* Pods_ReizoukoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85EF991421A033760009EA9A = {
 			isa = PBXGroup;
 			children = (
 				85EF991F21A033760009EA9A /* Reizouko */,
-				85EF993421A0337B0009EA9A /* ReizoukoTests */,
-				85EF993F21A0337B0009EA9A /* ReizoukoUITests */,
 				85EF991E21A033760009EA9A /* Products */,
+				E5E4AEBF8ABBDE3F6EE5A502 /* Pods */,
+				30F456720D55A024D5D3E4EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,30 +128,31 @@
 			children = (
 				85EF992021A033760009EA9A /* AppDelegate.swift */,
 				85EF992221A033770009EA9A /* ViewController.swift */,
+				85EF995421B282220009EA9A /* AddfoodViewController.swift */,
+				85EF994E21A18AE70009EA9A /* ShousaiViewController.swift */,
+				858CB6D32237688F005B67B4 /* SettingsViewController.swift */,
 				85EF992421A033770009EA9A /* Main.storyboard */,
 				85EF992721A0337B0009EA9A /* Assets.xcassets */,
 				85EF992921A0337B0009EA9A /* LaunchScreen.storyboard */,
 				85EF992C21A0337B0009EA9A /* Info.plist */,
+				85EF995021B2708F0009EA9A /* CustomCell.swift */,
+				85D5397C21F0B67600985262 /* MyUINavigationController.swift */,
 			);
 			path = Reizouko;
 			sourceTree = "<group>";
 		};
-		85EF993421A0337B0009EA9A /* ReizoukoTests */ = {
+		E5E4AEBF8ABBDE3F6EE5A502 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				85EF993521A0337B0009EA9A /* ReizoukoTests.swift */,
-				85EF993721A0337B0009EA9A /* Info.plist */,
+				86D1355E19396F4A1D021480 /* Pods-Reizouko.debug.xcconfig */,
+				D8441F8EC96941BD4D99CFA6 /* Pods-Reizouko.release.xcconfig */,
+				6CCA0936457559991AB979C8 /* Pods-Reizouko-ReizoukoUITests.debug.xcconfig */,
+				C50991D925A301A3B02D6616 /* Pods-Reizouko-ReizoukoUITests.release.xcconfig */,
+				B332FB01427745DDED59751A /* Pods-ReizoukoTests.debug.xcconfig */,
+				5E2C14098DCE8581C729DB55 /* Pods-ReizoukoTests.release.xcconfig */,
 			);
-			path = ReizoukoTests;
-			sourceTree = "<group>";
-		};
-		85EF993F21A0337B0009EA9A /* ReizoukoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				85EF994021A0337B0009EA9A /* ReizoukoUITests.swift */,
-				85EF994221A0337B0009EA9A /* Info.plist */,
-			);
-			path = ReizoukoUITests;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85EF994521A0337B0009EA9A /* Build configuration list for PBXNativeTarget "Reizouko" */;
 			buildPhases = (
+				7959CE148004EA765F48E776 /* [CP] Check Pods Manifest.lock */,
 				85EF991921A033760009EA9A /* Sources */,
 				85EF991A21A033760009EA9A /* Frameworks */,
 				85EF991B21A033760009EA9A /* Resources */,
+				778373B3B68F5A589609EA17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +181,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85EF994821A0337B0009EA9A /* Build configuration list for PBXNativeTarget "ReizoukoTests" */;
 			buildPhases = (
+				21E85A7687C28C0062EFFAA6 /* [CP] Check Pods Manifest.lock */,
 				85EF992D21A0337B0009EA9A /* Sources */,
 				85EF992E21A0337B0009EA9A /* Frameworks */,
 				85EF992F21A0337B0009EA9A /* Resources */,
@@ -167,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85EF994B21A0337B0009EA9A /* Build configuration list for PBXNativeTarget "ReizoukoUITests" */;
 			buildPhases = (
+				6FF502258ACF2D06531C8FE8 /* [CP] Check Pods Manifest.lock */,
 				85EF993821A0337B0009EA9A /* Sources */,
 				85EF993921A0337B0009EA9A /* Frameworks */,
 				85EF993A21A0337B0009EA9A /* Resources */,
+				AB04A0DE00BCF9C8735A1C64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +286,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21E85A7687C28C0062EFFAA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReizoukoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FF502258ACF2D06531C8FE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reizouko-ReizoukoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		778373B3B68F5A589609EA17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reizouko/Pods-Reizouko-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reizouko/Pods-Reizouko-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reizouko/Pods-Reizouko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7959CE148004EA765F48E776 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reizouko-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB04A0DE00BCF9C8735A1C64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reizouko-ReizoukoUITests/Pods-Reizouko-ReizoukoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reizouko-ReizoukoUITests/Pods-Reizouko-ReizoukoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reizouko-ReizoukoUITests/Pods-Reizouko-ReizoukoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85EF991921A033760009EA9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85EF995521B282220009EA9A /* AddfoodViewController.swift in Sources */,
+				85EF994F21A18AE70009EA9A /* ShousaiViewController.swift in Sources */,
+				858CB6D42237688F005B67B4 /* SettingsViewController.swift in Sources */,
 				85EF992321A033770009EA9A /* ViewController.swift in Sources */,
+				85EF995121B2708F0009EA9A /* CustomCell.swift in Sources */,
 				85EF992121A033760009EA9A /* AppDelegate.swift in Sources */,
+				85D5397D21F0B67600985262 /* MyUINavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85EF993621A0337B0009EA9A /* ReizoukoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +415,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85EF994121A0337B0009EA9A /* ReizoukoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,47 +571,52 @@
 		};
 		85EF994621A0337B0009EA9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86D1355E19396F4A1D021480 /* Pods-Reizouko.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = Reizouko/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.Reizouko;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.myzouko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		85EF994721A0337B0009EA9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8441F8EC96941BD4D99CFA6 /* Pods-Reizouko.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = Reizouko/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.Reizouko;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kudoayana.myzouko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		85EF994921A0337B0009EA9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B332FB01427745DDED59751A /* Pods-ReizoukoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = ReizoukoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,11 +633,12 @@
 		};
 		85EF994A21A0337B0009EA9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E2C14098DCE8581C729DB55 /* Pods-ReizoukoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = ReizoukoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -508,10 +655,11 @@
 		};
 		85EF994C21A0337B0009EA9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CCA0936457559991AB979C8 /* Pods-Reizouko-ReizoukoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = ReizoukoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,10 +676,11 @@
 		};
 		85EF994D21A0337B0009EA9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C50991D925A301A3B02D6616 /* Pods-Reizouko-ReizoukoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RJ4SSUDLN9;
+				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = ReizoukoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

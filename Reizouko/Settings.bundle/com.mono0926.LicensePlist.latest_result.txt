@@ -1,0 +1,43 @@
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.12.0
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 2.12.0
+
+name: PryntTrimmerView, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 4.0.0
+
+name: PryntTrimmerView, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 4.0.0
+
+name: SteviaLayout, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.7.3
+
+name: SteviaLayout, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.7.3
+
+name: YPImagePicker, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.1.3
+
+name: YPImagePicker, nameSpecified: 
+body: The MIT License (MIT…
+version: 4.1.3
+
+add-version-numbers: false
+
+LicensePlist Version: 2.12.0

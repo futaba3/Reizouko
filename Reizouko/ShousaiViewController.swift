@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import YPImagePicker
 
 class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -16,6 +17,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var kosuTextField: UITextField!
     @IBOutlet var memoTextView: UITextView!
+    @IBOutlet var OnOffLabel: UILabel!
     
     var datePicker: UIDatePicker = UIDatePicker()
     var kosuPicker: UIPickerView = UIPickerView()
@@ -40,6 +42,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(index!)
+        OnOffLabel.text = "ON"
         
         // データを読み込む
         names = saveData.array(forKey: "name") as? [String] ?? []
@@ -148,45 +151,78 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // "撮影する"ボタンを押した時のメソッド
     @IBAction func takePhoto(){
-        // カメラが使えるかの確認
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            
-            // カメラを起動
-            let picker = UIImagePickerController()
-            picker.sourceType = .camera
-            picker.delegate = self
-            
-            picker.allowsEditing = true
-            
-            present(picker, animated: true, completion: nil)
-        } else {
-            // カメラが使えない時エラーがコンソールに出ます
-            print("error")
-        }
+//        // カメラが使えるかの確認
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//
+//            // カメラを起動
+//            let picker = UIImagePickerController()
+//            picker.sourceType = .camera
+//            picker.delegate = self
+//
+//            picker.allowsEditing = true
+//
+//            present(picker, animated: true, completion: nil)
+//        } else {
+//            // カメラが使えない時エラーがコンソールに出ます
+//            print("error")
+//        }
+        showImagePicker()
     }
     
     // カメラロールにある画像を読み込む時のメソッド
     @IBAction func openAlbum(){
+//        // カメラロールを使えるかの確認
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            // カメラロールの画像を選択して画像を表示するまでの一連の流れ
+//            let picker = UIImagePickerController()
+//            picker.sourceType = .photoLibrary
+//            picker.delegate = self
+//
+//            picker.allowsEditing = true
+//
+//            present(picker, animated: true, completion: nil)
+//        }
+        showImagePicker()
+    }
+    
+    // YPImagePickerで画像を選択する
+    func showImagePicker() {
+        var config = YPImagePickerConfiguration()
+        // 作成した画像が保存されないようにする
+        config.shouldSaveNewPicturesToAlbum = false
+        config.startOnScreen = YPPickerScreen.library
+        
+        let picker = YPImagePicker(configuration: config)
         // カメラロールを使えるかの確認
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            // カメラロールの画像を選択して画像を表示するまでの一連の流れ
-            let picker = UIImagePickerController()
-            picker.sourceType = .photoLibrary
-            picker.delegate = self
-            
-            picker.allowsEditing = true
-            
-            present(picker, animated: true, completion: nil)
+        picker.didFinishPicking { [unowned picker] items, _ in
+            if let photo = items.singlePhoto {
+//                print(photo.fromCamera) // Image source (camera or library)
+//                print(photo.image) // Final image selected by the user
+//                print(photo.originalImage) // original image selected by the user, unfiltered
+//                print(photo.modifiedImage) // Transformed image, can be nil
+//                print(photo.exifMeta) // Print exif meta data of original image.
+                
+                if photo.modifiedImage == nil {
+                    self.foodImageView.image = photo.originalImage
+                } else {
+                    self.foodImageView.image = photo.modifiedImage
+                }
+                
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
         }
     }
     
-    // カメラ、カメラロールを使った時に選択した画像をアプリ内に表示するためのメソッド
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        foodImageView.image = info[.editedImage] as? UIImage
-        
-        dismiss(animated: true, completion: nil)
-    }
+//    // カメラ、カメラロールを使った時に選択した画像をアプリ内に表示するためのメソッド
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//
+//        foodImageView.image = info[.editedImage] as? UIImage
+//
+//        dismiss(animated: true, completion: nil)
+//    }
     
     @IBAction func delete(){
         // 削除しますかアラート
@@ -262,22 +298,42 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // 通知オンオフスイッチ
     @IBAction func switchChange(_ sender: UISwitch) {
-        //        if sender.isOn == true {    //sender.isOnのみに省略可能
-        //            // 通知を設定
-        //            self.notification()
-        //            print(sender.isOn)     // trueと表示
-        //        } else {
-        //            //通知は設定しない
-        //        }
-        let alert: UIAlertController = UIAlertController(title: "😭", message: "個別の通知設定はもう少しお待ちください", preferredStyle: .alert)
-        alert.addAction(
-            UIAlertAction(
-                title: "もどる",
-                style: .cancel,
-                handler: nil
-            )
-        )
-        present(alert, animated: true, completion: nil)
+       if sender.isOn {    //sender.isOnのみに省略可能
+           // 通知を設定
+           OnOffLabel.text = "ON"
+           print("オンになっています")
+       } else {
+           OnOffLabel.text = "ON"
+           //通知は設定しない
+       }
+//        let alert: UIAlertController = UIAlertController(title: "😭", message: "個別の通知設定はもう少しお待ちください", preferredStyle: .alert)
+//        alert.addAction(
+//            UIAlertAction(
+//                title: "もどる",
+//                style: .cancel,
+//                handler: nil
+//            )
+//        )
+//        present(alert, animated: true, completion: nil)
+    }
+    
+    func saveEditFood() {
+        // 編集したものに変える
+        self.names[self.index!] = self.nameTextField.text!
+        self.dates[self.index!] = self.dateTextField.text!
+        self.kosu[self.index!] = self.kosuTextField.text!
+        self.memo[self.index!] = self.memoTextView.text!
+        self.photo[self.index!] = self.foodImageView.image!.pngData()!
+        
+        // foodImageViewのimageをData型に変換
+        let photoData = self.foodImageView.image!.pngData()!
+        
+        // 配列を保存する
+        self.saveData.set(self.names, forKey: "name")
+        self.saveData.set(self.dates, forKey: "date")
+        self.saveData.set(self.kosu, forKey: "kosu")
+        self.saveData.set(self.memo, forKey: "memo")
+        self.saveData.set(self.photo, forKey: "photo")
     }
     
     // 保存するメソッド
@@ -303,33 +359,22 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
                     style: .default,
                     handler: { action in
                     
-                        // 編集したものに変える
-                        self.names[self.index!] = self.nameTextField.text!
-                        self.dates[self.index!] = self.dateTextField.text!
-                        self.kosu[self.index!] = self.kosuTextField.text!
-                        self.memo[self.index!] = self.memoTextView.text!
-                        self.photo[self.index!] = self.foodImageView.image!.pngData()!
-                        
-                        // foodImageViewのimageをData型に変換
-                        let photoData = self.foodImageView.image!.pngData()!
-                        
-                        // 配列を保存する
-                        self.saveData.set(self.names, forKey: "name")
-                        self.saveData.set(self.dates, forKey: "date")
-                        self.saveData.set(self.kosu, forKey: "kosu")
-                        self.saveData.set(self.memo, forKey: "memo")
-                        self.saveData.set(self.photo, forKey: "photo")
-                        
-//                        // スイッチのオンオフで通知設定を変更
-//                        func switchChange(_ sender: UISwitch) {
-//                            if sender.isOn == true {
-//                                // スイッチがオンだったら通知する
+                        // 日付の入力がなければ通知は設定されない
+                        if self.dateTextField.text == "" {
+                            self.saveEditFood()
+                            
+                        } else {
+                            
+                            self.saveEditFood()
+                            
+                            // スイッチのオンオフで通知設定を変更
+                            if self.OnOffLabel.text == "ON" {
                                 self.notification()
-//                                print(sender.isOn)     // trueと表示
-//                            } else {
-//                                //通知は設定しない
-//                            }
-//                        }
+                                print("通知を設定しました！")
+                            } else {
+                                // 通知は設定しない
+                            }
+                        }
                         
                         // メイン画面に移動する
                         self.navigationController?.popViewController(animated: true)

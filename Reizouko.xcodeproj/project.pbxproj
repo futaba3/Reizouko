@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		85EF994F21A18AE70009EA9A /* ShousaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF994E21A18AE70009EA9A /* ShousaiViewController.swift */; };
 		85EF995121B2708F0009EA9A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF995021B2708F0009EA9A /* CustomCell.swift */; };
 		85EF995521B282220009EA9A /* AddfoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF995421B282220009EA9A /* AddfoodViewController.swift */; };
+		85FA91F123DDE801000052B0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85FA91F023DDE801000052B0 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		85EF994E21A18AE70009EA9A /* ShousaiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShousaiViewController.swift; sourceTree = "<group>"; };
 		85EF995021B2708F0009EA9A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		85EF995421B282220009EA9A /* AddfoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddfoodViewController.swift; sourceTree = "<group>"; };
+		85FA91F023DDE801000052B0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		86D1355E19396F4A1D021480 /* Pods-Reizouko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reizouko.debug.xcconfig"; path = "Target Support Files/Pods-Reizouko/Pods-Reizouko.debug.xcconfig"; sourceTree = "<group>"; };
 		B332FB01427745DDED59751A /* Pods-ReizoukoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReizoukoTests.debug.xcconfig"; path = "Target Support Files/Pods-ReizoukoTests/Pods-ReizoukoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C50991D925A301A3B02D6616 /* Pods-Reizouko-ReizoukoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reizouko-ReizoukoUITests.release.xcconfig"; path = "Target Support Files/Pods-Reizouko-ReizoukoUITests/Pods-Reizouko-ReizoukoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				85EF992C21A0337B0009EA9A /* Info.plist */,
 				85EF995021B2708F0009EA9A /* CustomCell.swift */,
 				85D5397C21F0B67600985262 /* MyUINavigationController.swift */,
+				85FA91F023DDE801000052B0 /* Settings.bundle */,
 			);
 			path = Reizouko;
 			sourceTree = "<group>";
@@ -151,7 +154,6 @@
 				B332FB01427745DDED59751A /* Pods-ReizoukoTests.debug.xcconfig */,
 				5E2C14098DCE8581C729DB55 /* Pods-ReizoukoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -167,6 +169,7 @@
 				85EF991A21A033760009EA9A /* Frameworks */,
 				85EF991B21A033760009EA9A /* Resources */,
 				778373B3B68F5A589609EA17 /* [CP] Embed Pods Frameworks */,
+				85FA91EF23DDE771000052B0 /* LicensePlist */,
 			);
 			buildRules = (
 			);
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FA91F123DDE801000052B0 /* Settings.bundle in Resources */,
 				85EF992B21A0337B0009EA9A /* LaunchScreen.storyboard in Resources */,
 				85EF992821A0337B0009EA9A /* Assets.xcassets in Resources */,
 				85EF992621A033770009EA9A /* Main.storyboard in Resources */,
@@ -369,6 +373,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		85FA91EF23DDE771000052B0 /* LicensePlist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicensePlist;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\nfi\n";
 		};
 		AB04A0DE00BCF9C8735A1C64 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -577,7 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = Reizouko/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,7 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NWPYC5C8JF;
 				INFOPLIST_FILE = Reizouko/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

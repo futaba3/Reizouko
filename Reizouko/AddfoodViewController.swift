@@ -17,6 +17,7 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var kosuTextField: UITextField!
     @IBOutlet var memoTextView: UITextView!
+    @IBOutlet var OnOffLabel: UILabel!
     
     var datePicker: UIDatePicker = UIDatePicker()
     var kosuPicker: UIPickerView = UIPickerView()
@@ -29,10 +30,12 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
     // 通知設定に必要
     let center = UNUserNotificationCenter.current()
     var notificationTime = DateComponents()
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        OnOffLabel.text = "ON"
         
         // ImageViewに画像が入っていない時、デフォルト画像を表示する
         if foodImageView.image == nil {
@@ -165,13 +168,17 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {
-                print(photo.fromCamera) // Image source (camera or library)
-                print(photo.image) // Final image selected by the user
-                print(photo.originalImage) // original image selected by the user, unfiltered
-                print(photo.modifiedImage) // Transformed image, can be nil
-                print(photo.exifMeta) // Print exif meta data of original image.
+//                print(photo.fromCamera) // Image source (camera or library)
+//                print(photo.image) // Final image selected by the user
+//                print(photo.originalImage) // original image selected by the user, unfiltered
+//                print(photo.modifiedImage) // Transformed image, can be nil
+//                print(photo.exifMeta) // Print exif meta data of original image.
                 
-                self.foodImageView.image = photo.modifiedImage
+                if photo.modifiedImage == nil {
+                    self.foodImageView.image = photo.originalImage
+                } else {
+                    self.foodImageView.image = photo.modifiedImage
+                }
                 
             }
             picker.dismiss(animated: true, completion: nil)
@@ -223,11 +230,12 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // 通知オンオフスイッチ
     @IBAction func switchChange(_ sender: UISwitch) {
-        if sender.isOn == true {    //sender.isOnのみに省略可能
+        if sender.isOn {    //sender.isOnのみに省略可能
             // 通知を設定
-            self.notification()
-            print(sender.isOn)     // trueと表示
+            OnOffLabel.text = "ON"
+            print("オンになっています")
         } else {
+            OnOffLabel.text = "OFF"
             //通知は設定しない
         }
 //        let alert: UIAlertController = UIAlertController(title: "😭", message: "個別の通知設定はもう少しお待ちください", preferredStyle: .alert)
@@ -241,8 +249,34 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
 //        present(alert, animated: true, completion: nil)
     }
     
-    // 保存するメソッド
-    @IBAction func saveFood(){
+    func saveFood(){
+        // 配列の変数を定義する
+        var names = self.saveData.array(forKey: "name") as? [String] ?? []
+        var dates = self.saveData.array(forKey: "date") as? [String] ?? []
+        var kosu = self.saveData.array(forKey: "kosu") as? [String] ?? []
+        var memo = self.saveData.array(forKey: "memo") as? [String] ?? []
+        var photo = self.saveData.array(forKey: "photo") as? [Data] ?? []
+        
+        // 配列に今回入力したものを保存する
+        names.append(self.nameTextField.text!)
+        dates.append(self.dateTextField.text!)
+        kosu.append(self.kosuTextField.text!)
+        memo.append(self.memoTextView.text!)
+        
+        // foodImageViewのimageをData型に変換
+        let photoData = self.foodImageView.image!.pngData()!
+        photo.append(photoData)
+        
+        // 配列を保存する
+        self.saveData.set(names, forKey: "name")
+        self.saveData.set(dates, forKey: "date")
+        self.saveData.set(kosu, forKey: "kosu")
+        self.saveData.set(memo, forKey: "memo")
+        self.saveData.set(photo, forKey: "photo")
+    }
+    
+    // いれるボタン
+    @IBAction func save(){
         // なまえ入力されてないアラート
         if nameTextField.text == "" {
             let alert: UIAlertController = UIAlertController(title: "ちょっとまって", message: "なまえを入力してください！", preferredStyle: .alert)
@@ -264,42 +298,22 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
                     style: .default,
                     handler: { action in
                         
-                        // 配列の変数を定義する
-                        var names = self.saveData.array(forKey: "name") as? [String] ?? []
-                        var dates = self.saveData.array(forKey: "date") as? [String] ?? []
-                        var kosu = self.saveData.array(forKey: "kosu") as? [String] ?? []
-                        var memo = self.saveData.array(forKey: "memo") as? [String] ?? []
-                        var photo = self.saveData.array(forKey: "photo") as? [Data] ?? []
-                        
-                        // 配列に今回入力したものを保存する
-                        names.append(self.nameTextField.text!)
-                        dates.append(self.dateTextField.text!)
-                        kosu.append(self.kosuTextField.text!)
-                        memo.append(self.memoTextView.text!)
-                        
-                        // foodImageViewのimageをData型に変換
-                        let photoData = self.foodImageView.image!.pngData()!
-                        photo.append(photoData)
-                        
-                        // 配列を保存する
-                        self.saveData.set(names, forKey: "name")
-                        self.saveData.set(dates, forKey: "date")
-                        self.saveData.set(kosu, forKey: "kosu")
-                        self.saveData.set(memo, forKey: "memo")
-                        self.saveData.set(photo, forKey: "photo")
-                       
-                        // スイッチのオンオフで通知設定を変更
-//                        func switchChange(_ sender: UISwitch) {
-//                            if sender.isOn == true {
-//                                 スイッチがオンだったら通知する
-//
-//                            } else {
-//                                通知は設定しない
-//                                print("通知は設定していません")
-//                            }
-//                        }
-                        
-                        self.notification()
+                        // 日付の入力がなければ通知は設定されない
+                        if self.dateTextField.text == "" {
+                            self.saveFood()
+                            
+                        } else {
+                            
+                            self.saveFood()
+                            
+                            // スイッチのオンオフで通知設定を変更
+                            if self.OnOffLabel.text == "ON" {
+                                self.notification()
+                                print("通知を設定しました！")
+                            } else {
+                                // 通知は設定しない
+                            }
+                        }
                         
                         // メイン画面に移動する
                         self.navigationController?.popViewController(animated: true)

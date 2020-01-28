@@ -7,6 +7,7 @@ target 'Reizouko' do
 
   # Pods for Reizouko
   pod 'YPImagePicker'
+  pod 'LicensePlist'
 
   target 'ReizoukoTests' do
     inherit! :search_paths

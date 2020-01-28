@@ -55,6 +55,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.name.text = names[indexPath.row]
         cell.date.text = dates[indexPath.row]
         
+        
         return cell
     }
     

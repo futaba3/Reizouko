@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         //テーブルビューのデリゲートメソッドはViewControllerメソッドに書くよ、という設定
         table.delegate = self
         
-        sectionArray = ["通知"]
+        sectionArray = ["通知 / オープンソースライセンス"]
         
 //        // データを読み込む
 //        timeTextField.text = saveData.object(forKey: "time") as? String

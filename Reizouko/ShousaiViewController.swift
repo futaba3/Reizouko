@@ -17,6 +17,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var kosuTextField: UITextField!
     @IBOutlet var memoTextView: UITextView!
+    @IBOutlet var notificationSwitch: UISwitch!
     @IBOutlet var OnOffLabel: UILabel!
     
     var datePicker: UIDatePicker = UIDatePicker()
@@ -31,6 +32,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     var kosu: [String] = []
     var memo: [String] = []
     var photo: [Data] = []
+    var notificationIs: [String] = []
     
     // 個数の数字の配列
     var kosuArray:[Int] = ([Int])(1...20)
@@ -42,7 +44,6 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(index!)
-        OnOffLabel.text = "ON"
         
         // データを読み込む
         names = saveData.array(forKey: "name") as? [String] ?? []
@@ -50,6 +51,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         kosu = saveData.array(forKey: "kosu") as? [String] ?? []
         memo = saveData.array(forKey: "memo") as? [String] ?? []
         photo = saveData.array(forKey: "photo") as? [Data] ?? []
+        notificationIs = saveData.array(forKey: "notificationIs") as? [String] ?? []
         
         // index番目のを使う
         nameTextField.text = names[index!]
@@ -57,6 +59,34 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         kosuTextField.text = kosu[index!]
         memoTextView.text = memo[index!]
         foodImageView.image = UIImage(data: photo[index!])
+        
+        // indexがnotificationIsに存在していないときはoffに設定する
+        guard index! >= 0 && index! < notificationIs.count else {
+            print("存在してないのでoffにしたよ")
+            // indexにnotificationIsをoffにして追加する
+            var notificationIs = self.saveData.array(forKey: "notificationIs") as? [String] ?? []
+            notificationIs.append("OFF")
+            self.saveData.set(notificationIs, forKey: "notificationIs")
+            
+            OnOffLabel.text = "OFF"
+            notificationSwitch.setOn(false, animated: true)
+            return
+            
+        }
+            
+        // indexがnotificationIsに存在していたらスイッチ切り替える
+        OnOffLabel.text = notificationIs[index!]
+        if let onOff = OnOffLabel.text {
+            if onOff == "ON" {
+                // スイッチオン
+                notificationSwitch.setOn(true, animated: true)
+            } else {
+                // スイッチオフ
+                notificationSwitch.setOn(false, animated: true)
+            }
+            
+        }
+        
         
         // ImageViewに画像が入っていない時、デフォルト画像を表示する
         if foodImageView.image == nil {
@@ -120,6 +150,10 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         dateTextField.text = "\(formatter.string(from: datePicker.date))"
+        
+        // 日付入力で自動的に通知オン
+        OnOffLabel.text = "ON"
+        notificationSwitch.setOn(true, animated: true)
     }
     
     // 個数決定ボタン押す
@@ -240,6 +274,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
                     self.kosu.remove(at: self.index!)
                     self.memo.remove(at: self.index!)
                     self.photo.remove(at: self.index!)
+                    self.notificationIs.remove(at: self.index!)
                
                     // 配列を保存する
                     self.saveData.set(self.names, forKey: "name")
@@ -247,6 +282,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
                     self.saveData.set(self.kosu, forKey: "kosu")
                     self.saveData.set(self.memo, forKey: "memo")
                     self.saveData.set(self.photo, forKey: "photo")
+                    self.saveData.set(self.notificationIs, forKey: "notificationIs")
                     print("はいボタンが押されました！")
                     // メイン画面に移動する
                     self.navigationController?.popViewController(animated: true)
@@ -303,7 +339,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
            OnOffLabel.text = "ON"
            print("オンになっています")
        } else {
-           OnOffLabel.text = "ON"
+           OnOffLabel.text = "OFF"
            //通知は設定しない
        }
 //        let alert: UIAlertController = UIAlertController(title: "😭", message: "個別の通知設定はもう少しお待ちください", preferredStyle: .alert)
@@ -324,6 +360,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.kosu[self.index!] = self.kosuTextField.text!
         self.memo[self.index!] = self.memoTextView.text!
         self.photo[self.index!] = self.foodImageView.image!.pngData()!
+        self.notificationIs[self.index!] = self.OnOffLabel.text!
         
         // foodImageViewのimageをData型に変換
         let photoData = self.foodImageView.image!.pngData()!
@@ -334,6 +371,8 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.saveData.set(self.kosu, forKey: "kosu")
         self.saveData.set(self.memo, forKey: "memo")
         self.saveData.set(self.photo, forKey: "photo")
+        self.saveData.set(notificationIs, forKey: "notificationIs")
+        
     }
     
     // 保存するメソッド
@@ -359,21 +398,15 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
                     style: .default,
                     handler: { action in
                     
-                        // 日付の入力がなければ通知は設定されない
-                        if self.dateTextField.text == "" {
+                        
+                        // スイッチのオンオフで通知設定を変更
+                        if self.OnOffLabel.text == "ON" {
                             self.saveEditFood()
-                            
+                            self.notification()
+                            print("通知を設定しました！")
                         } else {
-                            
                             self.saveEditFood()
-                            
-                            // スイッチのオンオフで通知設定を変更
-                            if self.OnOffLabel.text == "ON" {
-                                self.notification()
-                                print("通知を設定しました！")
-                            } else {
-                                // 通知は設定しない
-                            }
+                            // 通知は設定しない
                         }
                         
                         // メイン画面に移動する

@@ -313,6 +313,7 @@
                         <outlet property="kosuTextField" destination="MMV-Cl-eI8" id="laR-Lp-GQ9"/>
                         <outlet property="memoTextView" destination="arN-Nw-8zz" id="MWC-IQ-KB1"/>
                         <outlet property="nameTextField" destination="wpo-Gq-FQe" id="AXu-hb-437"/>
+                        <outlet property="notificationSwitch" destination="1af-gE-Dgh" id="wEp-Zi-OED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bg8-Bt-9eH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -496,6 +497,7 @@
                         <outlet property="kosuTextField" destination="hA8-fL-0hv" id="ekM-am-qrH"/>
                         <outlet property="memoTextView" destination="BMo-HH-9Gy" id="md8-Kd-o7T"/>
                         <outlet property="nameTextField" destination="tF8-Eo-kIo" id="ILK-7x-QhV"/>
+                        <outlet property="notificationSwitch" destination="iWW-Z5-tE7" id="Rfg-Hp-pbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jah-9L-hSR" userLabel="First Responder" sceneMemberID="firstResponder"/>

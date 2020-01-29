@@ -17,6 +17,7 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var kosuTextField: UITextField!
     @IBOutlet var memoTextView: UITextView!
+    @IBOutlet var notificationSwitch: UISwitch!
     @IBOutlet var OnOffLabel: UILabel!
     
     var datePicker: UIDatePicker = UIDatePicker()
@@ -35,7 +36,9 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        OnOffLabel.text = "ON"
+        // 日付が入力されるまではOFF
+        OnOffLabel.text = "OFF"
+        notificationSwitch.setOn(false, animated: true)
         
         // ImageViewに画像が入っていない時、デフォルト画像を表示する
         if foodImageView.image == nil {
@@ -91,6 +94,9 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         dateTextField.text = "\(formatter.string(from: datePicker.date))"
+        // 日付入力で自動的に通知オン
+        OnOffLabel.text = "ON"
+        notificationSwitch.setOn(true, animated: true)
     }
     
     // 個数決定ボタン押す
@@ -256,12 +262,14 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
         var kosu = self.saveData.array(forKey: "kosu") as? [String] ?? []
         var memo = self.saveData.array(forKey: "memo") as? [String] ?? []
         var photo = self.saveData.array(forKey: "photo") as? [Data] ?? []
+        var notificationIs = self.saveData.array(forKey: "notificationIs") as? [String] ?? []
         
         // 配列に今回入力したものを保存する
         names.append(self.nameTextField.text!)
         dates.append(self.dateTextField.text!)
         kosu.append(self.kosuTextField.text!)
         memo.append(self.memoTextView.text!)
+        notificationIs.append(self.OnOffLabel.text!)
         
         // foodImageViewのimageをData型に変換
         let photoData = self.foodImageView.image!.pngData()!
@@ -273,6 +281,7 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.saveData.set(kosu, forKey: "kosu")
         self.saveData.set(memo, forKey: "memo")
         self.saveData.set(photo, forKey: "photo")
+        self.saveData.set(notificationIs, forKey: "notificationIs")
     }
     
     // いれるボタン
@@ -298,21 +307,14 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
                     style: .default,
                     handler: { action in
                         
-                        // 日付の入力がなければ通知は設定されない
-                        if self.dateTextField.text == "" {
+                        // スイッチのオンオフで通知設定を変更
+                        if self.OnOffLabel.text == "ON" {
                             self.saveFood()
-                            
+                            self.notification()
+                            print("通知を設定しました！")
                         } else {
-                            
                             self.saveFood()
-                            
-                            // スイッチのオンオフで通知設定を変更
-                            if self.OnOffLabel.text == "ON" {
-                                self.notification()
-                                print("通知を設定しました！")
-                            } else {
-                                // 通知は設定しない
-                            }
+                            // 通知は設定しない
                         }
                         
                         // メイン画面に移動する

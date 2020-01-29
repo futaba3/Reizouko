@@ -62,14 +62,25 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // indexがnotificationIsに存在していないときはoffに設定する
         guard index! >= 0 && index! < notificationIs.count else {
-            print("存在してないのでoffにしたよ")
+            print("index存在してないよ")
             // indexにnotificationIsをoffにして追加する
             var notificationIs = self.saveData.array(forKey: "notificationIs") as? [String] ?? []
-            notificationIs.append("OFF")
+            
+            // 日付が設定されていたらオンにしておく
+            if dateTextField.text == "" {
+                OnOffLabel.text = "OFF"
+                notificationIs.append("OFF")
+                notificationSwitch.setOn(false, animated: true)
+                
+            } else {
+                OnOffLabel.text = "ON"
+                notificationIs.append("ON")
+                notificationSwitch.setOn(true, animated: true)
+                
+            }
+            
             self.saveData.set(notificationIs, forKey: "notificationIs")
             
-            OnOffLabel.text = "OFF"
-            notificationSwitch.setOn(false, animated: true)
             return
             
         }
@@ -334,13 +345,36 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // 通知オンオフスイッチ
     @IBAction func switchChange(_ sender: UISwitch) {
-       if sender.isOn {    //sender.isOnのみに省略可能
-           // 通知を設定
-           OnOffLabel.text = "ON"
-           print("オンになっています")
-       } else {
-           OnOffLabel.text = "OFF"
-           //通知は設定しない
+        // 日付がなければスイッチは動かせない
+//        if dateTextField.text == "" {
+//            // ボタン無効
+//            OnOffLabel.isEnabled = false
+//        }
+        
+        if dateTextField.text == "" {
+            let alert: UIAlertController = UIAlertController(title: "期限を入力してください！", message: "期限がわからないので通知できません😢", preferredStyle: .alert)
+            alert.addAction(
+                UIAlertAction(
+                    title: "もどる",
+                    style: .cancel,
+                    handler: { action in
+                        self.notificationSwitch.setOn(false, animated: true)
+                }
+                    
+                )
+            )
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            if sender.isOn {
+                // 通知を設定
+                OnOffLabel.text = "ON"
+                print("オンになっています")
+            } else {
+                OnOffLabel.text = "OFF"
+                //通知は設定しない
+            }
        }
 //        let alert: UIAlertController = UIAlertController(title: "😭", message: "個別の通知設定はもう少しお待ちください", preferredStyle: .alert)
 //        alert.addAction(

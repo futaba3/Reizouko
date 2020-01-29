@@ -236,23 +236,32 @@ class AddfoodViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // 通知オンオフスイッチ
     @IBAction func switchChange(_ sender: UISwitch) {
-        if sender.isOn {    //sender.isOnのみに省略可能
-            // 通知を設定
-            OnOffLabel.text = "ON"
-            print("オンになっています")
-        } else {
-            OnOffLabel.text = "OFF"
-            //通知は設定しない
+        // 日付がなければスイッチは動かせない
+        if dateTextField.text == "" {
+             let alert: UIAlertController = UIAlertController(title: "期限を入力してください！", message: "期限がわからないので通知できません😢", preferredStyle: .alert)
+            alert.addAction(
+                UIAlertAction(
+                    title: "もどる",
+                    style: .cancel,
+                    handler: { action in
+                        self.notificationSwitch.setOn(false, animated: true)
+                }
+                    
+                )
+            )
+             present(alert, animated: true, completion: nil)
+             
+         } else {
+             
+             if sender.isOn {
+                 // 通知を設定
+                 OnOffLabel.text = "ON"
+                 print("オンになっています")
+             } else {
+                 OnOffLabel.text = "OFF"
+                 //通知は設定しない
+             }
         }
-//        let alert: UIAlertController = UIAlertController(title: "😭", message: "個別の通知設定はもう少しお待ちください", preferredStyle: .alert)
-//        alert.addAction(
-//            UIAlertAction(
-//                title: "もどる",
-//                style: .cancel,
-//                handler: nil
-//            )
-//        )
-//        present(alert, animated: true, completion: nil)
     }
     
     func saveFood(){

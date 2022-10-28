@@ -25,6 +25,8 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 常にライトモード（明るい外観）を指定することでダークモード適用を回避（そのうちダークモードに対応したい）
+        self.overrideUserInterfaceStyle = .light
         
         //テーブルビューのデータソースメソッドはViewControllerクラスに書くよ、という設定
         table.dataSource = self

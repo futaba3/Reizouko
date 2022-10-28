@@ -1,9 +1,9 @@
 PODS:
-  - LicensePlist (2.12.0)
-  - PryntTrimmerView (4.0.0)
+  - LicensePlist (3.23.4)
+  - PryntTrimmerView (4.0.2)
   - SteviaLayout (4.7.3)
-  - YPImagePicker (4.1.3):
-    - PryntTrimmerView (~> 4.0.0)
+  - YPImagePicker (4.5.0):
+    - PryntTrimmerView (~> 4.0.2)
     - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
@@ -18,10 +18,10 @@ SPEC REPOS:
     - YPImagePicker
 
 SPEC CHECKSUMS:
-  LicensePlist: 58cf605015acb4397095c8e7115c786d37ad8fbc
-  PryntTrimmerView: 67e67573ffd4c073f1308effa66aefd0cfa667a0
+  LicensePlist: 804d60431859ef6ee6b2aa2dd0eb2c09d0418edd
+  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
-  YPImagePicker: 7a34eabd0ef544ae8fbf9785c3df9ec5bbf242e3
+  YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
 PODFILE CHECKSUM: 92be72a0a90f4f2c86e830137116c3cbf1ca5b37
 

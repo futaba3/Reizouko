@@ -43,6 +43,9 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 常にライトモード（明るい外観）を指定することでダークモード適用を回避（そのうちダークモードに対応したい）
+        self.overrideUserInterfaceStyle = .light
+        
         print(index!)
         
         // データを読み込む
@@ -99,12 +102,16 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
         
-        // ImageViewに画像が入っていない時、デフォルト画像を表示する
-        if foodImageView.image == nil {
-            let image = UIImage(named: "reizouko2.png")
-            foodImageView.image = image
-        }
-        view.addSubview(foodImageView)
+//        // ImageViewに画像が入っていない時、デフォルト画像を表示する
+//        if foodImageView.image == nil {
+//            let image = UIImage(named: "reizouko2.png")
+//            foodImageView.image = image
+//        }
+//        view.addSubview(foodImageView)
+        //青にする(色)
+        foodImageView.layer.borderColor = UIColor.orange.cgColor
+               //線の太さ(太さ)
+        foodImageView.layer.borderWidth = 5
         
         // stringの日付をDate型に直す
         let formatter = DateFormatter()
@@ -113,6 +120,7 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         let date = formatter.date(from: dates[index!])
         
         // dateピッカーの設定
+        datePicker.preferredDatePickerStyle = .wheels
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
@@ -143,8 +151,6 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // 終わったらキーボードが閉じる
         nameTextField.delegate = self
-        
-        // Do any additional setup after loading the view.
     }
     
     // 名前入力後にキーボードが閉じる
@@ -194,80 +200,36 @@ class ShousaiViewController: UIViewController, UIImagePickerControllerDelegate, 
         return String(kosuArray[row]) + "こ"
     }
     
-    // "撮影する"ボタンを押した時のメソッド
-    @IBAction func takePhoto(){
-//        // カメラが使えるかの確認
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//
-//            // カメラを起動
-//            let picker = UIImagePickerController()
-//            picker.sourceType = .camera
-//            picker.delegate = self
-//
-//            picker.allowsEditing = true
-//
-//            present(picker, animated: true, completion: nil)
-//        } else {
-//            // カメラが使えない時エラーがコンソールに出ます
-//            print("error")
-//        }
+    @IBAction func imageViewTapped(_ sender: Any) {
         showImagePicker()
     }
     
-    // カメラロールにある画像を読み込む時のメソッド
-    @IBAction func openAlbum(){
-//        // カメラロールを使えるかの確認
-//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-//            // カメラロールの画像を選択して画像を表示するまでの一連の流れ
-//            let picker = UIImagePickerController()
-//            picker.sourceType = .photoLibrary
-//            picker.delegate = self
-//
-//            picker.allowsEditing = true
-//
-//            present(picker, animated: true, completion: nil)
-//        }
-        showImagePicker()
-    }
-    
-    // YPImagePickerで画像を選択する
     func showImagePicker() {
         var config = YPImagePickerConfiguration()
-        // 作成した画像が保存されないようにする
+//        config.isScrollToChangeModesEnabled = true
+//        config.onlySquareImagesFromCamera = true
+        config.usesFrontCamera = false
+        config.showsPhotoFilters = false
         config.shouldSaveNewPicturesToAlbum = false
-        config.startOnScreen = YPPickerScreen.library
+        config.startOnScreen = YPPickerScreen.photo
+        config.screens = [.library, .photo]
+        config.showsCrop = .none
+        config.targetImageSize = YPImageSize.original
+//        config.overlayView = UIView()
+//        config.hidesStatusBar = true
+//        config.hidesBottomBar = false
+//        config.preferredStatusBarStyle = UIStatusBarStyle.default
+        config.library.maxNumberOfItems = 1
         
         let picker = YPImagePicker(configuration: config)
-        // カメラロールを使えるかの確認
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {
-//                print(photo.fromCamera) // Image source (camera or library)
-//                print(photo.image) // Final image selected by the user
-//                print(photo.originalImage) // original image selected by the user, unfiltered
-//                print(photo.modifiedImage) // Transformed image, can be nil
-//                print(photo.exifMeta) // Print exif meta data of original image.
-                
-                if photo.modifiedImage == nil {
-                    self.foodImageView.image = photo.originalImage
-                } else {
-                    self.foodImageView.image = photo.modifiedImage
-                }
-                
+                self.foodImageView.image = photo.image
             }
             picker.dismiss(animated: true, completion: nil)
         }
         present(picker, animated: true, completion: nil)
-        }
     }
-    
-//    // カメラ、カメラロールを使った時に選択した画像をアプリ内に表示するためのメソッド
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//
-//        foodImageView.image = info[.editedImage] as? UIImage
-//
-//        dismiss(animated: true, completion: nil)
-//    }
     
     @IBAction func delete(){
         // 削除しますかアラート

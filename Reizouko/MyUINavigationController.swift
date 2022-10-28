@@ -12,16 +12,27 @@ class MyUINavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //　ナビゲーションバーの背景色
-        navigationBar.barTintColor = .orange
-        // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
-        navigationBar.tintColor = .white
-        // ナビゲーションバーのテキストを変更する
-        navigationBar.titleTextAttributes = [
-            // 文字の色
-            .foregroundColor: UIColor.white
-        ]
-        // Do any additional setup after loading the view.
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            // NavigationBarの背景色の設定
+            appearance.backgroundColor = .orange
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            // NavigationBarのタイトルの文字色の設定
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationBar.barTintColor = .orange
+            // ナビゲーションバーのアイテムの色　（戻る　＜　とか　読み込みゲージとか）
+            navigationBar.tintColor = .white
+            // ナビゲーションバーのテキストを変更する
+            navigationBar.titleTextAttributes = [
+                // 文字の色
+                .foregroundColor: UIColor.white
+            ]
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -23,6 +23,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 常にライトモード（明るい外観）を指定することでダークモード適用を回避（そのうちダークモードに対応したい）
+        self.overrideUserInterfaceStyle = .light
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -51,6 +54,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CustomCell
         
+        print(saveData.array(forKey: "name"))
+        print(saveData.array(forKey: "date"))
+        print(saveData.array(forKey: "photo"))
+    
+        
         cell.foodimg.image = UIImage(data: photo[indexPath.row])
         cell.name.text = names[indexPath.row]
         cell.date.text = dates[indexPath.row]
@@ -77,7 +85,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // セルのサイズを設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 画面の幅-(スペース*2)/3
-        return CGSize(width: (self.view.frame.width - 10) / 3, height: (self.view.frame.width - 10) / 3)
+        return CGSize(width: (self.view.frame.width - 12) / 3, height: (self.view.frame.width - 12) / 3)
     }
     
     // 画面遷移する時に呼び出される
